@@ -1,9 +1,62 @@
 @import "../normalize/normalize";
 
-
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-stack;
+  font-size: $font-size-base;
+  line-height: $line-height;
+}
+
+/* Headers */
+
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+/* Paragraphs */
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Lists */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Links */
+
+a {
+  text-decoration: none;
+}
+
+/* Buttons */
+
+button {
+  border: 0;
+}

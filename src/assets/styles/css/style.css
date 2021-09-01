@@ -1,3 +1,5 @@
+/* Colors */
+/* Screens */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -345,6 +347,27 @@ ul {
 /* Links */
 a {
   text-decoration: none; }
+
+/* Buttons */
+button {
+  border: 0; }
+
+/* Buttons */
+.btn {
+  width: 100%;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 4px; }
+  .btn--cyan {
+    background: #2acfcf; }
+  .btn--violet {
+    background: #3b3054; }
+  .btn--rounded {
+    border-radius: 40px; }
+
+@media screen and (min-width: 768px) {
+  .btn {
+    width: auto; } }
 
 .App {
   text-align: center; }
