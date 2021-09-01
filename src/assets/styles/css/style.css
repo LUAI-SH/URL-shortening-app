@@ -352,6 +352,10 @@ a {
 button {
   border: 0; }
 
+/* Inputs */
+input {
+  border: 0; }
+
 /* Buttons */
 .btn {
   width: 100%;
@@ -368,6 +372,21 @@ button {
 @media screen and (min-width: 768px) {
   .btn {
     width: auto; } }
+
+/* Input */
+.input {
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid #bfbfbf;
+  border-radius: 4px; }
+  .input::placeholder {
+    font-size: 1.3rem;
+    color: #bfbfbf; }
+  .input--error {
+    border: 2px solid #f46262; }
+    .input--error::placeholder {
+      color: #f46262;
+      opacity: 0.5; }
 
 .App {
   text-align: center; }
