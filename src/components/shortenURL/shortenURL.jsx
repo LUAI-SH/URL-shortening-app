@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import spinner from "../../assets/images/spinner.svg";
 
 export default class ShortenURL extends Component {
   constructor() {
@@ -6,6 +7,9 @@ export default class ShortenURL extends Component {
     this.state = {
       typedUrl: "",
       urls: [],
+      isValidUrl: true,
+      isEmpty: false,
+      isShortening: false,
     };
 
     this.shortenApi = "https://api.shrtco.de/v2/shorten?url=";
@@ -16,19 +20,23 @@ export default class ShortenURL extends Component {
 
   handleChange = (event) => {
     let typedUrl = event.target.value;
-    this.setState({ typedUrl });
+    this.setState({ typedUrl, isEmpty: false, isValidUrl: true });
   };
 
   handleSubmit = async (event) => {
     event.preventDefault();
     let { typedUrl, urls } = this.state;
+    if (typedUrl === "") {
+      this.setState({ isEmpty: true });
+      return;
+    }
     const existedUrl = urls.filter((url) => url.longUrl === typedUrl).length;
-    console.log(existedUrl);
     if (existedUrl) {
-      console.log("this URL alredy exist");
+      alert("this URL already exist");
       return;
     }
     try {
+      this.setState({ isShortening: true });
       let response = await (
         await fetch(`${this.shortenApi}${typedUrl}`)
       ).json();
@@ -38,29 +46,38 @@ export default class ShortenURL extends Component {
         longUrl: typedUrl,
         shortenUrl,
       });
-      this.setState({ urls, typedUrl: "" });
+      this.setState({ urls, typedUrl: "", isShortening: false });
       console.log(this.state.urls);
     } catch (error) {
-      console.log("Error while shortening Url");
+      this.setState({ isValidUrl: false, isShortening: false });
     }
   };
 
   render() {
+    const { typedUrl, isValidUrl, isEmpty, isShortening } = this.state;
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="url-input">Enter URL: </label>
-          <input
-            type="url"
-            value={this.state.typedUrl}
-            onChange={this.handleChange}
-            id="url-input"
-          />
-          <button type="submit" disabled={!this.state.typedUrl}>
-            Shorten it!
-          </button>
-
-          {/* <input type="submit" value="Submit" /> */}
+      <div className="container center form-wrapper">
+        <form className="form" onSubmit={this.handleSubmit}>
+          <div className="width--100">
+            <input
+              className={`input ${isEmpty | !isValidUrl && "input--error"}`}
+              type="text"
+              placeholder="Shorten a link here..."
+              value={typedUrl}
+              onChange={this.handleChange}
+            />
+            {!isValidUrl && <span className="warning">Not valid link or slow connection<span className="emoji">🤭</span>, please check and try again.</span>}
+            {isEmpty && <span className="warning">Please add a link <span className="emoji">😘</span></span>}
+          </div>
+          {isShortening ? (
+            <span className="spinner center">
+              <img className="loading--small" src={spinner} />
+            </span>
+          ) : (
+            <button className="btn btn--cyan form__btn" type="submit">
+              Shorten it!
+            </button>
+          )}
         </form>
       </div>
     );

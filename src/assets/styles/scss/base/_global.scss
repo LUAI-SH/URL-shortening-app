@@ -1,12 +1,20 @@
 /* Buttons */
+.container {
+  max-width: 1440px;
+  min-width: 320px;
+}
 
 .btn {
   width: 100%;
   color: $color-white;
+  white-space: nowrap;
   padding: 1rem 2rem;
   border-radius: 4px;
   &--cyan {
     background: $color-primary--cyan;
+    &:hover {
+      background: lighten($color-primary--cyan, 10%);
+    }
   }
   &--violet {
     background: $color-primary--violet;
@@ -25,9 +33,10 @@
 /* Input */
 .input {
   width: 100%;
-  padding: 0.8rem 1.5rem;
-  border : 1px solid $color-neutral--gray;
+  padding: 1rem 1.5rem;
+  border: 1px solid $color-neutral--gray;
   border-radius: 4px;
+  height: 4.2rem;
   &::placeholder {
     font-size: 1.3rem;
     color: $color-neutral--gray;
@@ -39,4 +48,33 @@
       opacity: 0.5;
     }
   }
+}
+
+/* Warning */
+
+.warning {
+  font-size: 1rem;
+  color: $color-secondary;
+  font-style: italic;
+  // margin-top: -5px;
+}
+
+
+.loading--small {
+  padding: 0;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+}
+
+
+/* Emoji */ 
+
+.emoji {
+  display: inline-block;
+  text-decoration: none;
+  font-style: normal;
+  font-size: 1.7rem;
+  margin-left: 4px;
+  transform: translateY(3px);
 }
