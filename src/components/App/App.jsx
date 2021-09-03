@@ -7,7 +7,7 @@ class App extends Component {
     super();
     this.state = {
       typedUrl: "",
-      urls: [],
+      urls: [{typedUrl: 'dsfcdsjkhfdjk', shortenUrl: 'kdjhcnjkdsbnckj'}],
       isValidUrl: true,
       isEmpty: false,
       isShortening: false,
@@ -44,7 +44,7 @@ class App extends Component {
       let { full_short_link: shortenUrl } = response.result;
       let { urls } = this.state;
       urls.push({
-        longUrl: typedUrl,
+        typedUrl,
         shortenUrl,
       });
       this.setState({ urls, typedUrl: "", isShortening: false });
@@ -62,7 +62,7 @@ class App extends Component {
           onSubmit={this.handleSubmit}
           onChange={this.handleChange}
         />
-        <LinksCard urls={this.state.urls}/>
+        <LinksCard links={this.state.urls}/>
       </div>
     );
   }

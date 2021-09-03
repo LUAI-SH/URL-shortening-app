@@ -5,44 +5,41 @@ class LinksCard extends Component {
     super(props);
     this.state = {
       buttonsStatus: [],
-      links: [
-        { a: "fgvfdg", b: "dfdsfdf" },
-        { a: "fgvfdg", b: "dfdsfdf" },
-      ],
     };
   }
 
-  handleClicked = async (foo, index) => {
-    foo[index].value = true;
-    await this.setState({ buttonsStatus: foo });
-    console.log(this.state);
-    //navigator.clipboard.writeText(shortenLink);
+  handleClicked = async (buttonsStatus, index) => {
+    console.log(`Before`, buttonsStatus);
+    buttonsStatus[index] = { isClicked: true };
+    console.log(buttonsStatus);
+    await this.setState({ buttonsStatus });
+    //console.log(this.state);
+    navigator.clipboard.writeText(this.props.links[index].shortenUrl);
     // setInterval(() => this.setState({ buttonsStatus: false }), 5000);
   };
 
   render() {
-    console.log(`prps`, this.props)
     let btnStatus = [];
-    const { links, buttonsStatus } = this.state;
+    const { buttonsStatus } = this.state;
     return (
       <div className="container center">
-        {links.map((item, index) => {
-          btnStatus.push({ index, value: false });
+        {this.props.links.map((item, index) => {
+          btnStatus.push({ isClicked: false });
           return (
             <div key={`${index}`} className="card links-card">
               <header className="links-card__header links-card__link1">
-                {item.a}
+                {item.typedUrl}
               </header>
               <div className="links-card__body">
-                <span className="links-card__link2">{item.b}</span>
+                <span className="links-card__link2">{item.shortenUrl}</span>
                 <button
                   onClick={() => this.handleClicked(btnStatus, index)}
                   className={`btn btn--cyan links-card__btn ${
-                    buttonsStatus[index]?.value &&
+                    buttonsStatus[index]?.isClicked &&
                     "btn--violet btn--violet--animated"
                   }`}
                 >
-                  {buttonsStatus[index]?.value ? "Copied!" : "Copy"}
+                  {buttonsStatus[index]?.isClicked ? "Copied!" : "Copy"}
                 </button>
               </div>
             </div>

@@ -515,14 +515,19 @@ input {
 .links-card {
   display: flex;
   flex-direction: column;
+  text-align: left;
+  margin-bottom: 2rem;
   box-shadow: 0px 7px 10px 2px #d9d9d9; }
   .links-card__header {
+    overflow: hidden;
     border-bottom: 1px solid #9e9aa7;
-    padding: 1rem 1.4rem; }
+    padding: 1.4rem;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
   .links-card__link1 {
     color: #232127; }
   .links-card__body {
-    padding: 1rem 1.4rem; }
+    padding: 1.4rem; }
   .links-card__link2 {
     display: block;
     color: #2acfcf;
