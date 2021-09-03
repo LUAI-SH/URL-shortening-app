@@ -1,7 +1,7 @@
 const Media = (props) => {
-  let { icon, header, paragraph } = props;
+  let { icon, header, paragraph, id } = props;
   return (
-    <div className="card media">
+    <div className={`card media move-down--${id}`}>
       <div className="media__icon">
         <img className="media__img" src={icon} />
       </div>

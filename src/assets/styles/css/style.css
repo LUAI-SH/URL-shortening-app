@@ -452,6 +452,13 @@ p {
 .no-padding {
   padding: 0; }
 
+/* Move */
+@media screen and (min-width: 768px) {
+  .move-down--1 {
+    transform: translateY(40px); }
+  .move-down--2 {
+    transform: translateY(80px); } }
+
 .App {
   text-align: center; }
 
@@ -629,7 +636,8 @@ p {
   height: 700px;
   background: #2acfcf;
   position: absolute;
-  z-index: -1; }
+  z-index: -1;
+  transform: translateY(-15px); }
 
 @media screen and (min-width: 768px) {
   .statistics {

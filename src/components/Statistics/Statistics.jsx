@@ -19,6 +19,7 @@ const Statistics = () => {
               icon={icon}
               header={header}
               paragraph={paragraph}
+              id={index}
             />
           );
         })}
