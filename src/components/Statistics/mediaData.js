@@ -1,5 +1,5 @@
 import recognitionIcon from "../../assets/images/icon-brand-recognition.svg";
-import recordsIcon from "../../assets/images/icon-fully-customizable.svg";
+import recordsIcon from "../../assets/images/icon-detailed-records.svg";
 import customizableIcon from "../../assets/images/icon-fully-customizable.svg";
 
 export const mediaData = [
