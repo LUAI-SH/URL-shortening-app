@@ -1,3 +1,5 @@
+@import "../abstracts/variables";
+
 body {
-  background: lighten($color-neutral--gray, 20%);
+  background: lighten($color-neutral--gray, 10%);
 }

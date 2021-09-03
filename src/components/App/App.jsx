@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import ShortenURL from "../ShortenURL/ShortenURL.jsx";
 import LinksCard from "../LinksCard/LinksCard.jsx";
 
+import '../../assets/styles/scss/pages/_home.scss'
+
 class App extends Component {
   constructor() {
     super();
