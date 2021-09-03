@@ -14,7 +14,8 @@ body {
   font-family: $font-stack;
   font-size: $font-size-base;
   line-height: $line-height;
-  padding: 2rem; // remove this later
+  text-align: center;
+  // padding: 2rem; // remove this later
 }
 
 /* Headers */
@@ -25,10 +26,6 @@ h3,
 h4 {
   margin-bottom: 1rem;
   line-height: 1.1;
-}
-
-h1 {
-  font-size: 2.5rem;
 }
 
 /* Paragraphs */
@@ -44,12 +41,10 @@ ul {
   padding-left: 0;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $large-screens) {
   body {
     font-size: #{$font-size-base * 0.8};
-  }
-  h1 {
-    font-size: 2rem;
+    text-align: left;
   }
 }
 

@@ -1,0 +1,33 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  background: lighten($color-neutral--gray, 30%);
+  padding: 6.4rem 0 18rem 0;
+
+  &__img {
+    width: 100%;
+    transform: translateX(25vw);
+  }
+
+  &__btn {
+    width: auto;
+    font-size: 2rem;
+    padding: 1.6rem 5rem;
+  }
+}
+
+@media screen and (min-width: $large-screens) {
+  .hero {
+    flex-direction: row;
+    padding-bottom: 15rem;
+    &__img {
+      // order: 1;
+      transform: translateX(15vw);
+    }
+
+    &__content {
+      align-self: center;
+      order: -1;
+    }
+  }
+}
