@@ -1,7 +1,4 @@
-import brandReg from "../../assets/images/icon-brand-recognition.svg";
-
 const Media = (props) => {
-  console.log('props :>> ', props);
   let { icon, header, paragraph } = props;
   return (
     <div className="card media">

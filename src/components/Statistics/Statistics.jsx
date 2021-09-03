@@ -3,16 +3,16 @@ import { mediaData } from "./mediaData.js";
 
 const Statistics = () => {
   return (
-    <section>
-      <h2>Advanced Statistics</h2>
-      <p>
+    <section className="container statistics">
+      <h2 className="statistics__heading">Advanced Statistics</h2>
+      <p className="statistics__description">
         Track how your links are performing across the web with our advanced
-        statistics dashboard{" "}
+        statistics dashboard.
       </p>
-      <div>
+      <div className="statistics__media">
+      <div className="statistics__connector"></div>
         {mediaData.map((item, index) => {
           let { icon, header, paragraph } = item;
-          console.log(icon);
           return (
             <Media
               key={index}

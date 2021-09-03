@@ -360,9 +360,14 @@ input {
 /* Headers */
 h1 {
   font-size: 4rem;
+  font-weight: 700;
   color: #232127;
   line-height: 1.3;
   margin-bottom: 1.6rem; }
+
+h3 {
+  font-size: 3rem;
+  font-weight: 700; }
 
 h3 {
   font-size: 2rem; }
@@ -592,7 +597,8 @@ p {
 .media {
   width: 32rem;
   padding-bottom: 0.5rem;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 8rem; }
   .media__icon {
     width: 80px;
     height: 80px;
@@ -608,6 +614,38 @@ p {
     margin-top: -30px; }
   .media__heading {
     margin-bottom: 2rem; }
+
+.statistics__heading {
+  margin-bottom: 2rem; }
+
+.statistics__media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8rem; }
+
+.statistics__connector {
+  width: 8px;
+  height: 700px;
+  background: #2acfcf;
+  position: absolute;
+  z-index: -1; }
+
+@media screen and (min-width: 768px) {
+  .statistics {
+    text-align: center; }
+    .statistics__media {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 8rem; }
+    .statistics__connector {
+      width: 800px;
+      height: 8px;
+      background: #2acfcf;
+      position: absolute;
+      z-index: -1; } }
 
 /* Colors */
 /* Screens */
