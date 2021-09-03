@@ -7,11 +7,12 @@ import "./assets/styles/css/style.css";
 // components
 import App from "./components/App/App.jsx";
 // import Hero from './components/Hero/Hero.jsx'
-import Media from "./components/Media/Media.jsx";
+// import Media from "./components/Media/Media.jsx";
+import Statistics from "./components/Statistics/Statistics.jsx";
 
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<Media />, document.getElementById("root"));
+ReactDOM.render(<Statistics />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
