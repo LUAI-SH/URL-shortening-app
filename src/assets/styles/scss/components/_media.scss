@@ -1,0 +1,25 @@
+.media {
+  width: 32rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+
+  &__icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background: $color-primary--violet;
+    margin: 0 auto;
+    transform: translateY(-42px);
+  }
+
+  &__content {
+    padding: 0 2rem;
+    margin-top: -30px;
+  }
+  &__heading {
+    margin-bottom: 2rem;
+  }
+}
