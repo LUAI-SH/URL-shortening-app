@@ -570,7 +570,7 @@ p {
   padding: 6.4rem 0 18rem 0; }
   .hero__img {
     width: 100%;
-    transform: translateX(25vw); }
+    transform: translateX(24vw); }
   .hero__btn {
     width: auto;
     font-size: 2rem;
@@ -589,4 +589,5 @@ p {
 /* Colors */
 /* Screens */
 body {
-  background: #d9d9d9; }
+  background: #d9d9d9;
+  padding: 2rem; }

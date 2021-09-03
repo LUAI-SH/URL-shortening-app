@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 
-/src/assets/styles/css/styles.css
+src/assets/styles/css/style.css
