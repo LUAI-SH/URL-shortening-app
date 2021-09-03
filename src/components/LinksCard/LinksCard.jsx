@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 
 class LinksCard extends Component {
-  state = {
-    buttonsStatus: [],
-    links: [
-      { a: "fgvfdg", b: "dfdsfdf" },
-      { a: "fgvfdg", b: "dfdsfdf" },
-    ],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      buttonsStatus: [],
+      links: [
+        { a: "fgvfdg", b: "dfdsfdf" },
+        { a: "fgvfdg", b: "dfdsfdf" },
+      ],
+    };
+  }
 
   handleClicked = async (foo, index) => {
     foo[index].value = true;
@@ -18,6 +21,7 @@ class LinksCard extends Component {
   };
 
   render() {
+    console.log(`prps`, this.props)
     let btnStatus = [];
     const { links, buttonsStatus } = this.state;
     return (
