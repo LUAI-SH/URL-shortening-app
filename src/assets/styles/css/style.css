@@ -655,6 +655,29 @@ p {
       position: absolute;
       z-index: -1; } }
 
+.call-out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 2rem;
+  background-image: url(../../images/bg-boost-mobile.svg);
+  background-size: 30rem;
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-color: #3b3054; }
+  .call-out__heading {
+    margin: 0 0 3rem 0;
+    color: white; }
+  .call-out__btn {
+    width: auto;
+    font-size: 2rem;
+    padding: 1.6rem 5rem; }
+
+@media screen and (min-width: 768px) {
+  .call-out {
+    background-image: url(../../images/bg-boost-desktop.svg);
+    background-size: 135rem; } }
+
 /* Colors */
 /* Screens */
 body {
