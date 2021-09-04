@@ -1,13 +1,13 @@
 import { footerData } from "./footerData.js";
 
 const Footer = () => {
-  const { brand, sections, socials  } = footerData;
+  const { brand, sections, socials } = footerData;
   return (
     <footer className="footer">
-      <div className="container">
-      <section>
-          <img src={brand} />
-      </section>
+      <div className="container footer__wrapper">
+        <section className="footer__section footer__brand">
+          <img className="" src={brand} />
+        </section>
         {sections.map((section, index) => {
           return (
             <section key={index} className="footer__section">
@@ -16,7 +16,9 @@ const Footer = () => {
                 return (
                   <ul key={index} className="footer__links">
                     <li>
-                      <a href="#" className="footer__link">{link}</a>
+                      <a href="#" className="footer__link">
+                        {link}
+                      </a>
                     </li>
                   </ul>
                 );
@@ -24,18 +26,18 @@ const Footer = () => {
             </section>
           );
         })}
-        <section className="footer__section">
-          {socials.map((icon, index) => {
-            return (
-              <ul className="footer__socials">
+        <section className="footer__section footer__socials">
+          <ul>
+            {socials.map((icon, index) => {
+              return (
                 <li>
                   <a href="#">
                     <img src={icon} />
                   </a>
                 </li>
-              </ul>
-            );
-          })}
+              );
+            })}
+          </ul>
         </section>
       </div>
     </footer>
