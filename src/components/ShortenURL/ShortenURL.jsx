@@ -5,8 +5,8 @@ export default class ShortenURL extends Component {
   render() {
     const { typedUrl, isValidUrl, isEmpty, isShortening } = this.props.state;
     return (
-      <div className="pad-horizontal move-up">
-        <div className="container center form-wrapper">
+      <div className="container center pad-horizontal move-up ">
+        <div className="form-wrapper">
           <form className="form" onSubmit={this.props.onSubmit}>
             <div className="width--100">
               <input

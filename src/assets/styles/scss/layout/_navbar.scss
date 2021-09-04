@@ -15,6 +15,7 @@
     left: 50%;
     transform: translate(-50%, 0);
     top: 6rem;
+    z-index: 100;
   }
   &__items {
     border-bottom: 1px solid darken($color-neutral--grayish-violet, 25%);

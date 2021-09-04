@@ -3,8 +3,8 @@ import { footerData } from "./footerData.js";
 const Footer = () => {
   const { brand, sections, socials } = footerData;
   return (
-    <footer className="footer pad-horizontal">
-      <div className="container footer__wrapper">
+    <footer className=" footer">
+      <div className="container center pad-horizontal footer__wrapper">
         <section className="footer__section footer__brand">
           <img className="" src={brand} />
         </section>
@@ -30,7 +30,7 @@ const Footer = () => {
           <ul>
             {socials.map((icon, index) => {
               return (
-                <li>
+                <li key={index}>
                   <a href="#">
                     <img src={icon} />
                   </a>

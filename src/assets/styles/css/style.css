@@ -608,7 +608,8 @@ p {
       margin-bottom: 0; } }
 
 .hero {
-  background: white; }
+  background: white;
+  overflow: hidden; }
   .hero-wrapper {
     display: flex;
     flex-direction: column;
@@ -776,7 +777,8 @@ p {
     width: 32rem;
     left: 50%;
     transform: translate(-50%, 0);
-    top: 6rem; }
+    top: 6rem;
+    z-index: 100; }
   .nav__items {
     border-bottom: 1px solid #5e5a68; }
   .nav__link {
