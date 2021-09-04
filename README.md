@@ -1,12 +1,3 @@
-# Create React App with SCSS
+# Frontend Mentor - Shortly URL shortening API Challenge Solution
 
-**If you want to start React.JS application and build your website styles using SCSS preprocessor, this boilerplate is the sulotion.**
-
-
-### Note
-_____
-SCSS folders structure follows Block Element Modifier (BEM) methodology.
-For more information: http://getbem.com/introduction/
-
-This boilerplate is based on *Create React App*
-https://github.com/facebook/create-react-app
+[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
