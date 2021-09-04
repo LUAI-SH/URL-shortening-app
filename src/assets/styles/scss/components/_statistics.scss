@@ -1,9 +1,14 @@
 .statistics {
   &__heading {
+    margin-top: 2rem;
     margin-bottom: 2rem;
   }
-  &__description {
+  &__header {
+    max-width: 40rem;
   }
+  // &__description {
+    
+  // }
   &__media {
     display: flex;
     flex-direction: column;
@@ -26,6 +31,7 @@
     &__heading {
     }
     &__description {
+      margin-bottom: 10rem;
     }
     &__media {
       display: flex;
@@ -33,9 +39,10 @@
       justify-content: center;
       gap: 40px;
       margin-top: 8rem;
+      margin-bottom: 8rem;
     }
     &__connector {
-      width: 800px;
+      width: 700px;
       height: 8px;
       background: $color-primary--cyan;
       position: absolute;

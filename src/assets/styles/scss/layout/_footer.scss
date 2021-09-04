@@ -1,6 +1,7 @@
 .footer {
   background: $color-neutral--dark-violet;
-  padding: 5.6rem 0;
+  padding-top: 5.6rem;
+  padding-bottom: 5.6rem;
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -45,15 +46,16 @@
   .footer {
     // padding: 5.6rem 0;
     &__wrapper {
-      padding: 0 10rem;
+      // padding: 0 10rem;
       flex-direction: row;
       gap: 48px;
     }
     &__brand {
       flex-grow: 2;
+      text-align: left;
     }
     &__socials {
-        margin-left: 5vw;
+      margin-left: 5vw;
       //   min-width: 30rem;
       & ul {
         justify-content: center;

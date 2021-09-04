@@ -32,6 +32,11 @@
 
 @media screen and (min-width: $large-screens) {
   .nav {
+    &__brand {
+        img {
+            transform: translateY(4px);
+        }
+    }
     &__wrapper {
       justify-content: flex-start;
       gap: 48px;

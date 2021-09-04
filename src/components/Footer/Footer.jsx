@@ -3,7 +3,7 @@ import { footerData } from "./footerData.js";
 const Footer = () => {
   const { brand, sections, socials } = footerData;
   return (
-    <footer className="footer">
+    <footer className="footer pad-horizontal">
       <div className="container footer__wrapper">
         <section className="footer__section footer__brand">
           <img className="" src={brand} />

@@ -16,7 +16,12 @@ class App extends Component {
     super();
     this.state = {
       typedUrl: "",
-      urls: [{ typedUrl: "dsfcdsjkhfdjk", shortenUrl: "kdjhcnjkdsbnckj" }],
+      urls: [
+        { typedUrl: "dsfcdsjkhfdjk", shortenUrl: "kdjhcnjkdsbnckj" },
+        { typedUrl: "dsfcdsjkhfdjk", shortenUrl: "kdjhcnjkdsbnckj" },
+        { typedUrl: "dsfcdsjkhfdjk", shortenUrl: "kdjhcnjkdsbnckj" },
+        { typedUrl: "dsfcdsjkhfdjk", shortenUrl: "kdjhcnjkdsbnckj" },
+      ],
       isValidUrl: true,
       isEmpty: false,
       isShortening: false,
