@@ -18,7 +18,7 @@ class NavBar extends Component {
     console.log("menuIsShown :>> ", menuIsShown);
     return (
       <nav className="nav">
-        <div className="container nav__wrapper">
+        <div className="container nav__wrapper pad-horizontal">
           <section className="nav__brand">
             <img src={brand} />
           </section>

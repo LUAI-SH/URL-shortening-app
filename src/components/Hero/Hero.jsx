@@ -10,7 +10,7 @@ const Hero = () => {
           alt="Person working on computer"
         />
       </div>
-      <div className="hero__content">
+      <div className="hero__content pad-horizontal">
         <h1 className="hero__header">More than just shorter links</h1>
         <p className="hero__description">
           Build your brand's recognition and get detailed insights on how your

@@ -455,6 +455,9 @@ p {
 .no-padding {
   padding: 0; }
 
+.pad-horizontal {
+  padding: 0 2rem; }
+
 .white {
   color: white !important; }
 

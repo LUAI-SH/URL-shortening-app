@@ -22,7 +22,7 @@ class LinksCard extends Component {
     let btnStatus = [];
     const { buttonsStatus } = this.state;
     return (
-      <div className="container center">
+      <div className="container center pad-horizontal">
         {this.props.links.map((item, index) => {
           btnStatus.push({ isClicked: false });
           return (

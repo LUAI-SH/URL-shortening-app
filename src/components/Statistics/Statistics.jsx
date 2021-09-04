@@ -3,7 +3,7 @@ import { mediaData } from "./mediaData.js";
 
 const Statistics = () => {
   return (
-    <section className="container statistics">
+    <section className="container statistics pad-horizontal">
       <h2 className="statistics__heading">Advanced Statistics</h2>
       <p className="statistics__description">
         Track how your links are performing across the web with our advanced

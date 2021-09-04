@@ -1,15 +1,22 @@
 import React, { Component } from "react";
+
+// Components
+import NavBar from "../NavBar/NavBar.jsx";
+import Hero from "../Hero/Hero.jsx";
 import ShortenURL from "../ShortenURL/ShortenURL.jsx";
 import LinksCard from "../LinksCard/LinksCard.jsx";
+import Statistics from "../Statistics/Statistics.jsx";
+import CallOut from "../CallOut/CallOut.jsx";
+import Footer from "../Footer/Footer.jsx";
 
-import '../../assets/styles/scss/pages/_home.scss'
+import "../../assets/styles/scss/pages/_home.scss";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       typedUrl: "",
-      urls: [{typedUrl: 'dsfcdsjkhfdjk', shortenUrl: 'kdjhcnjkdsbnckj'}],
+      urls: [{ typedUrl: "dsfcdsjkhfdjk", shortenUrl: "kdjhcnjkdsbnckj" }],
       isValidUrl: true,
       isEmpty: false,
       isShortening: false,
@@ -59,12 +66,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <NavBar />
+        <Hero />
         <ShortenURL
           state={this.state}
           onSubmit={this.handleSubmit}
           onChange={this.handleChange}
         />
-        <LinksCard links={this.state.urls}/>
+        <LinksCard links={this.state.urls} />
+        <Statistics />
+        <CallOut />
+        <Footer />
       </div>
     );
   }
