@@ -28,6 +28,15 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    let grabUrls = localStorage.getItem("shortlyUrls");
+    if(grabUrls) {
+      let {urls} = this.state;
+      urls = JSON.parse(grabUrls);
+      this.setState({urls});
+    }
+  }
+
   handleChange = (event) => {
     let typedUrl = event.target.value;
     this.setState({ typedUrl, isEmpty: false, isValidUrl: true });
@@ -40,9 +49,9 @@ class App extends Component {
       this.setState({ isEmpty: true });
       return;
     }
-    const existedUrl = urls.filter((url) => url.longUrl === typedUrl).length;
-    if (existedUrl) {
-      alert("this URL already exist");
+    const isExistedUrl = urls.find(url => url.typedUrl === typedUrl);
+    if (isExistedUrl) {
+      alert("this link already shortened");
       return;
     }
     try {
@@ -56,8 +65,9 @@ class App extends Component {
         typedUrl,
         shortenUrl,
       });
+      const stringifiedUrls = JSON.stringify(urls);
+      localStorage.setItem("shortlyUrls", stringifiedUrls);
       this.setState({ urls, typedUrl: "", isShortening: false });
-      console.log(this.state.urls);
     } catch (error) {
       this.setState({ isValidUrl: false, isShortening: false });
     }
