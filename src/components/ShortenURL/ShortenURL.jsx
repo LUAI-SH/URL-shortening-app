@@ -4,13 +4,17 @@ import spinner from "../../assets/images/spinner.svg";
 export default class ShortenURL extends Component {
   render() {
     const { typedUrl, isValidUrl, isEmpty, isShortening } = this.props.state;
+    console.log(isEmpty);
     return (
       <div className="container center pad-horizontal move-up ">
         <div className="form-wrapper">
           <form className="form" onSubmit={this.props.onSubmit}>
             <div className="width--100">
               <input
-                className={`input ${isEmpty | !isValidUrl && "input--error"}`}
+                className={`input ${
+                  isEmpty | !isValidUrl ?
+                  "input--error animate__animated animate__shakeX" : ""
+                }`}
                 type="text"
                 placeholder="Shorten a link here..."
                 value={typedUrl}

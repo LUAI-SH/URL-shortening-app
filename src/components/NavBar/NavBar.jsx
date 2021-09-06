@@ -15,7 +15,6 @@ class NavBar extends Component {
 
   render() {
     let { menuIsShown } = this.state;
-    console.log("menuIsShown :>> ", menuIsShown);
     return (
       <nav className="nav">
         <div className="container nav__wrapper pad-horizontal center">

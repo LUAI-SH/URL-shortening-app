@@ -30,10 +30,10 @@ class App extends Component {
 
   componentDidMount() {
     let grabUrls = localStorage.getItem("shortlyUrls");
-    if(grabUrls) {
-      let {urls} = this.state;
+    if (grabUrls) {
+      let { urls } = this.state;
       urls = JSON.parse(grabUrls);
-      this.setState({urls});
+      this.setState({ urls });
     }
   }
 
@@ -44,12 +44,13 @@ class App extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
+
     let { typedUrl, urls } = this.state;
     if (typedUrl === "") {
       this.setState({ isEmpty: true });
       return;
     }
-    const isExistedUrl = urls.find(url => url.typedUrl === typedUrl);
+    const isExistedUrl = urls.find((url) => url.typedUrl === typedUrl);
     if (isExistedUrl) {
       alert("this link already shortened");
       return;
