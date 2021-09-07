@@ -38,7 +38,7 @@ export default function App() {
 
   function handleChange(e) {
     let typedText = e.target.value;
-    setUserInput({ ...userInput, typedText: typedText, isEmpty: false });
+    setUserInput({ ...userInput, typedText: typedText, isEmpty: false, isValidUrl: true });
   }
 
   async function handleSubmit(e) {
