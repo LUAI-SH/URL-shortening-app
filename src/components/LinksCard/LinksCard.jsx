@@ -12,15 +12,15 @@ export default function LinksCard(props) {
 
   return (
     <div className="container center pad-horizontal move-up">
-      {props.links.map((item, index) => {
+      {props.links.map((link, index) => {
         btnStatus.push({ isClicked: false });
         return (
           <div key={index} className="card links-card">
             <header className="links-card__header links-card__link1">
-              {item.typedUrl}
+              {link.longUrl}
             </header>
             <div className="links-card__body">
-              <span className="links-card__link2">{item.shortenUrl}</span>
+              <span className="links-card__link2">{link.shortenUrl}</span>
               <button
                 onClick={() => handleClicked(btnStatus, index)}
                 className={`btn btn--cyan links-card__btn ${

@@ -6,9 +6,8 @@ export const mediaData = [
   {
     icon: recognitionIcon,
     header: "Brand Recognition",
-    paragraph:
-      "Boost your brand recognition with each click. Generic links don't \
-       mean a thing. Branded links help instil confidence in your content.",
+    paragraph: `Boost your brand recognition with each click. Generic links don't 
+       mean a thing. Branded links help instil confidence in your content.`,
   },
   {
     icon: recordsIcon,

@@ -15,53 +15,62 @@ import "../../assets/styles/scss/pages/_home.scss";
 const shortenApi = "https://api.shrtco.de/v2/shorten?url=";
 
 export default function App() {
-  const [state, setState] = useState({
-    typedUrl: "",
-    urls: [],
+  const [urls, setUrls] = useState([]);
+  const [isShortening, setIsShortening] = useState(false);
+  const [userInput, setUserInput] = useState({
+    typedText: "",
     isValidUrl: true,
     isEmpty: false,
-    isShortening: false,
   });
 
-  useEffect(() => {
+  const getUrlsFromLocalStorage = () => {
     let grabUrls = localStorage.getItem("shortlyUrls");
     if (grabUrls) {
-      grabUrls = JSON.parse(grabUrls);
-      setState({ ...state,  urls: grabUrls });
+      return JSON.parse(grabUrls);
     }
+    return null;
+  };
+
+  useEffect(() => {
+    let urls = getUrlsFromLocalStorage();
+    if (urls) setUrls(urls);
   }, []);
 
   function handleChange(e) {
-    let typedUrl = e.target.value;
-    setState({ ...state, typedUrl, isEmpty: false, isValidUrl: true });
+    let typedText = e.target.value;
+    setUserInput({ ...userInput, typedText: typedText, isEmpty: false });
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
-    let { typedUrl, urls } = state;
-    if (typedUrl === "") {
-      setState({ ...state, isEmpty: true });
+    let { typedText } = userInput;
+    if (typedText === "") {
+      setUserInput({ ...userInput, isEmpty: true });
       return;
     }
-    const isExistedUrl = urls.find((url) => url.typedUrl === typedUrl);
+    const isExistedUrl = urls.find((url) => url === typedText);
     if (isExistedUrl) {
-      alert("this link already shortened");
+      alert("This link was already shortened");
       return;
     }
     try {
-      setState({ ...state, isShortening: true });
-      let response = await (await fetch(`${shortenApi}${typedUrl}`)).json();
+      setIsShortening(true);
+      let response = await (await fetch(`${shortenApi}${typedText}`)).json();
       let { full_short_link: shortenUrl } = response.result;
-      let { urls } = state;
-      urls.push({
-        typedUrl,
-        shortenUrl,
-      });
-      const stringifiedUrls = JSON.stringify(urls);
-      localStorage.setItem("shortlyUrls", stringifiedUrls);
-      setState({ ...state, urls, typedUrl: "", isShortening: false });
+      const newUrls = [
+        ...urls,
+        {
+          longUrl: typedText,
+          shortenUrl,
+        },
+      ];
+      localStorage.setItem("shortlyUrls", JSON.stringify(newUrls));
+      setUrls(newUrls);
+      setIsShortening(false);
+      setUserInput({...userInput, typedText: ""})
     } catch (error) {
-      setState({ ...state, isValidUrl: false, isShortening: false });
+      setIsShortening(false);
+      setUserInput({...userInput, isValidUrl: false})
     }
   }
 
@@ -70,11 +79,12 @@ export default function App() {
       <NavBar />
       <Hero />
       <ShortenURL
-        state={state}
+        userInput={userInput}
+        isShortening = {isShortening}
         onSubmit={handleSubmit}
         onChange={handleChange}
       />
-      <LinksCard links={state.urls} />
+      <LinksCard links={urls} />
       <Statistics />
       <CallOut />
       <Footer />

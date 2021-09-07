@@ -2,7 +2,7 @@ import React from "react";
 import spinner from "../../assets/images/spinner.svg";
 
 export default function ShortenURL(props) {
-  const { typedUrl, isValidUrl, isEmpty, isShortening } = props.state;
+  const {userInput, isShortening} = props;
   
   return (
     <div className="container center pad-horizontal move-up ">
@@ -11,22 +11,22 @@ export default function ShortenURL(props) {
           <div className="width--100">
             <input
               className={`input ${
-                isEmpty | !isValidUrl
+                userInput.isEmpty | !userInput.isValidUrl
                   ? "input--error animate__animated animate__shakeX"
                   : ""
               }`}
               type="text"
               placeholder="Shorten a link here..."
-              value={typedUrl}
+              value={userInput.typedText}
               onChange={props.onChange}
             />
-            {!isValidUrl && (
+            {!userInput.isValidUrl && (
               <span className="warning">
                 Not valid link or slow connection
                 <span className="emoji">🤭</span>, please check and try again.
               </span>
             )}
-            {isEmpty && (
+            {userInput.isEmpty && (
               <span className="warning">
                 Please add a link <span className="emoji">😘</span>
               </span>
