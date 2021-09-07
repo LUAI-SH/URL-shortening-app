@@ -34,7 +34,7 @@ export default function ShortenURL(props) {
           </div>
           {isShortening ? (
             <span className="spinner center">
-              <img className="loading--small" src={spinner} />
+              <img className="loading--small" src={spinner} alt="Loading indicator"/>
             </span>
           ) : (
             <button className="btn btn--cyan form__btn" type="submit">

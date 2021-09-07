@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className=" footer">
       <div className="container center pad-horizontal footer__wrapper">
         <section className="footer__section footer__brand">
-          <img className="" src={brand} />
+          <img className="" src={brand} alt="Shortly Brand" />
         </section>
         {sections.map((section, index) => {
           return (
@@ -32,7 +32,7 @@ const Footer = () => {
               return (
                 <li key={index}>
                   <a href="#">
-                    <img src={icon} />
+                    <img src={icon} alt="Social media icon"/>
                   </a>
                 </li>
               );

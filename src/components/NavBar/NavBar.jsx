@@ -14,7 +14,7 @@ export default function NavBar() {
     <nav className="nav">
       <div className="container nav__wrapper pad-horizontal center">
         <section className="nav__brand">
-          <img src={brand} />
+          <img src={brand} alt="Shortly brand" />
         </section>
         <section className={`nav__content ${menuIsShown ? "" : "hidden"} `}>
           <section className="nav__items">
@@ -45,7 +45,7 @@ export default function NavBar() {
         </section>
         <section className="nav__menu">
           <button onClick={handleClicked}>
-            <img src={menu} />
+            <img src={menu} alt="Menu icon"/>
           </button>
         </section>
       </div>
