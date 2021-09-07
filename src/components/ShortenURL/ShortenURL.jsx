@@ -7,7 +7,7 @@ export default function ShortenURL(props) {
   return (
     <div className="container center pad-horizontal move-up ">
       <div className="form-wrapper">
-        <form className="form" onSubmit={this.props.onSubmit}>
+        <form className="form" onSubmit={props.onSubmit}>
           <div className="width--100">
             <input
               className={`input ${
@@ -18,7 +18,7 @@ export default function ShortenURL(props) {
               type="text"
               placeholder="Shorten a link here..."
               value={typedUrl}
-              onChange={this.props.onChange}
+              onChange={props.onChange}
             />
             {!isValidUrl && (
               <span className="warning">
