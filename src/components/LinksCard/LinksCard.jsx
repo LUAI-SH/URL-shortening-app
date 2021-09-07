@@ -1,53 +1,39 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-class LinksCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      buttonsStatus: [],
-    };
-  }
+export default function LinksCard(props) {
+  const [buttonsStatus, setButtonStatus] = useState([]);
+  let btnStatus = [];
 
-  handleClicked = async (buttonsStatus, index) => {
-    console.log(`Before`, buttonsStatus);
+  function handleClicked(buttonsStatus, index) {
     buttonsStatus[index] = { isClicked: true };
-    console.log(buttonsStatus);
-    await this.setState({ buttonsStatus });
-    //console.log(this.state);
-    navigator.clipboard.writeText(this.props.links[index].shortenUrl);
-    // setInterval(() => this.setState({ buttonsStatus: false }), 5000);
-  };
-
-  render() {
-    let btnStatus = [];
-    const { buttonsStatus } = this.state;
-    return (
-      <div className="container center pad-horizontal move-up">
-        {this.props.links.map((item, index) => {
-          btnStatus.push({ isClicked: false });
-          return (
-            <div key={`${index}`} className="card links-card">
-              <header className="links-card__header links-card__link1">
-                {item.typedUrl}
-              </header>
-              <div className="links-card__body">
-                <span className="links-card__link2">{item.shortenUrl}</span>
-                <button
-                  onClick={() => this.handleClicked(btnStatus, index)}
-                  className={`btn btn--cyan links-card__btn ${
-                    buttonsStatus[index]?.isClicked &&
-                    "btn--violet btn--violet--animated"
-                  }`}
-                >
-                  {buttonsStatus[index]?.isClicked ? "Copied!" : "Copy"}
-                </button>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    );
+    setButtonStatus(buttonsStatus);
+    navigator.clipboard.writeText(props.links[index].shortenUrl);
   }
-}
 
-export default LinksCard;
+  return (
+    <div className="container center pad-horizontal move-up">
+      {props.links.map((item, index) => {
+        btnStatus.push({ isClicked: false });
+        return (
+          <div key={index} className="card links-card">
+            <header className="links-card__header links-card__link1">
+              {item.typedUrl}
+            </header>
+            <div className="links-card__body">
+              <span className="links-card__link2">{item.shortenUrl}</span>
+              <button
+                onClick={() => handleClicked(btnStatus, index)}
+                className={`btn btn--cyan links-card__btn ${
+                  buttonsStatus[index]?.isClicked &&
+                  "btn--violet btn--violet--animated"
+                }`}
+              >
+                {buttonsStatus[index]?.isClicked ? "Copied!" : "Copy"}
+              </button>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
