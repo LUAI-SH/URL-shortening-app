@@ -3907,7 +3907,8 @@ p {
 
 .nav {
   background: #ffffff;
-  padding: 3rem 0; }
+  padding: 3rem 0;
+  z-index: 100; }
   .nav__wrapper {
     display: flex;
     justify-content: space-between;
@@ -3930,8 +3931,13 @@ p {
     color: white;
     margin-bottom: 2rem;
     font-weight: 700; }
-  .nav__menu button {
-    background: none; }
+  .nav__menu {
+    transform: scale(0.8);
+    left: 10px;
+    bottom: 10px;
+    position: relative; }
+    .nav__menu button {
+      background: none; }
 
 @media screen and (min-width: 768px) {
   .nav__brand img {

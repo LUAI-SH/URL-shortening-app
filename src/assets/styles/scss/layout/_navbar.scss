@@ -1,6 +1,7 @@
 .nav {
   background: #ffffff;
   padding: 3rem 0;
+  z-index: 100;
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -28,8 +29,14 @@
     margin-bottom: 2rem;
     font-weight: 700;
   }
-  &__menu button {
-    background: none;
+  &__menu {
+    transform: scale(0.8);
+    left: 10px;
+    bottom: 10px;
+    position: relative;
+    button {
+      background: none;
+    }
   }
 }
 
