@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Sling as Hamburger } from 'hamburger-react'
+
 import brand from "../../assets/images/logo.svg";
 import menu from "../../assets/images/icon-menu.svg";
 
@@ -45,7 +47,8 @@ export default function NavBar() {
         </section>
         <section className="nav__menu">
           <button onClick={handleClicked}>
-            <img src={menu} alt="Menu icon"/>
+            <Hamburger toggled={menuIsShown} toggle={setMenuIsShown} />
+            {/* <img src={menu} alt="Menu icon"/> */}
           </button>
         </section>
       </div>

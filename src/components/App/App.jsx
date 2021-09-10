@@ -38,7 +38,12 @@ export default function App() {
 
   function handleChange(e) {
     let typedText = e.target.value;
-    setUserInput({ ...userInput, typedText: typedText, isEmpty: false, isValidUrl: true });
+    setUserInput({
+      ...userInput,
+      typedText: typedText,
+      isEmpty: false,
+      isValidUrl: true,
+    });
   }
 
   async function handleSubmit(e) {
@@ -67,10 +72,10 @@ export default function App() {
       localStorage.setItem("shortlyUrls", JSON.stringify(newUrls));
       setUrls(newUrls);
       setIsShortening(false);
-      setUserInput({...userInput, typedText: ""})
+      setUserInput({ ...userInput, typedText: "" });
     } catch (error) {
       setIsShortening(false);
-      setUserInput({...userInput, isValidUrl: false})
+      setUserInput({ ...userInput, isValidUrl: false });
     }
   }
 
@@ -80,7 +85,7 @@ export default function App() {
       <Hero />
       <ShortenURL
         userInput={userInput}
-        isShortening = {isShortening}
+        isShortening={isShortening}
         onSubmit={handleSubmit}
         onChange={handleChange}
       />
