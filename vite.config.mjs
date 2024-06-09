@@ -18,6 +18,7 @@ export default defineConfig({
     },
     react(),
   ],
+  base: "/URL-shortening-app",
 
   optimizeDeps: {
     force: true,
